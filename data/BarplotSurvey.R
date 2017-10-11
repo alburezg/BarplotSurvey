@@ -34,7 +34,7 @@ BarplotSurvey <- function(variable = dataVars[3],
                    col = "antiquewhite",
                    names.arg = tbNames,
                    main = main,
-                   xlim = xlim,
+                   xlim = c(0,1),
                    xlab = "Porcentaje (%)") 
   # Add error bars 
   arrows(x0 = tb2[,"CI.l"], y0 = bPlot, 
