@@ -23,7 +23,7 @@ BarplotSurvey <- function(variable = dataVars[3],
   CI.l    <- tb - (qnorm(0.975) * sqrt(diag(attr(tb, "var"))))
   CI.u    <- tb + (qnorm(0.975) * sqrt(diag(attr(tb, "var"))))
   tb2     <- as.data.frame(cbind(tb, CI.l, CI.u))
-  # xlim    <- c(0, .05 * (round(0.22/0.05) + 2))
+  xlim    <- c(0, .05 * (round(0.22/0.05) + 2))
   
   # Create plot and store y coordinates
   linesTitle <- length(strsplit(main,"\n")[[1]]) + 1
@@ -34,7 +34,7 @@ BarplotSurvey <- function(variable = dataVars[3],
                    col = "antiquewhite",
                    names.arg = tbNames,
                    main = main,
-                   xlim = c(0,1),
+                   xlim = xlim,
                    xlab = "Porcentaje (%)") 
   # Add error bars 
   arrows(x0 = tb2[,"CI.l"], y0 = bPlot, 
