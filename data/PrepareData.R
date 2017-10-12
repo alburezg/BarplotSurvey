@@ -24,5 +24,12 @@ dataQuestions2 = sapply(dataQuestions, function(x) paste(strwrap(x, 50), collaps
 names(dataQuestions2) = NULL
 
 # Demographic subsets
-lapop$q2  = cut(lapop$q2, breaks = c(0,25,35,47,91))
-dataDemos = names(lapop[,4:7])
+lapop$q2  = cut(lapop$q2, breaks = c(0,25,35,47,91), 
+                labels = c("De 18 a 25","De 26 a 35","De 36 a 47","De 48 a 91"))
+
+# Reduced top priority list
+lapop$prioridadTop <- as.character(lapop$prioridad)
+lapop$prioridadTop[!(lapop$prioridadTop %in% levels(lapop$prioridad)[21:33])] <- "Otro"
+prioridadTopLevels <- names(table(lapop$prioridadTop)[order(table(lapop$prioridadTop))])
+lapop$prioridadTop <- factor(lapop$prioridadTop, levels = prioridadTopLevels)
+dataVars[dataVars == "prioridad"] <- "prioridadTop"
