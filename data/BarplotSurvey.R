@@ -23,7 +23,7 @@ BarplotSurvey <- function(variable = dataVars[3],
   CI.l    <- tb - (qnorm(0.975) * sqrt(diag(attr(tb, "var"))))
   CI.u    <- tb + (qnorm(0.975) * sqrt(diag(attr(tb, "var"))))
   tb2     <- as.data.frame(cbind(tb, CI.l, CI.u))
-  xlim1   <- c(0, .05 * (round(max(CI.u)/0.05,0) + 2))
+  xlim1   <- c(0, .05 * (round(max(CI.u)/0.05,0) + 1))
   
   # Create plot and store y coordinates
   linesTitle <- length(strsplit(main,"\n")[[1]]) + 1
