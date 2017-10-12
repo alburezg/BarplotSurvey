@@ -5,7 +5,7 @@ load(url("https://github.com/javob/BarplotSurvey/raw/master/data/SurveyData.RDat
 
 # Define question titles 
 dataVars       = names(lapop[,8:22])
-dataQuestions  = c("¿dónde se encontraría usted en esta escala (ideológica)?",
+dataQuestions  = c("¿Dónde se encontraría usted en esta escala (ideológica)?",
                     "En su opinión ¿cuál es el problema más grave que está enfrentando el país?",
                     "El Estado guatemalteco, en lugar del sector privado, debería ser el dueño de las empresas e industrias más importantes del país. ¿Hasta qué punto está de acuerdo o en desacuerdo con esta frase?",
                     "El Estado guatemalteco debe implementar políticas firmes para reducir la desigualdad de ingresos entre ricos y pobres. ¿Hasta qué punto está de acuerdo o en desacuerdo con esta frase?",
@@ -22,6 +22,7 @@ dataQuestions  = c("¿dónde se encontraría usted en esta escala (ideológica)?
                     "En su opinión, ¿cree que Ríos Montt debería ser condenado por genocidio en contra de los Ixiles?")
 dataQuestions2 = sapply(dataQuestions, function(x) paste(strwrap(x, 50), collapse = "\n"))
 names(dataQuestions2) = NULL
+dataQuestions3 = paste(c(1:length(dataQuestions)), dataQuestions, sep = ". ")
 
 # Demographic subsets
 lapop$q2  = cut(lapop$q2, breaks = c(0,25,35,47,91), 
