@@ -1,0 +1,13 @@
+name: barplotsurvey
+title: barplotsurvey
+username:
+account: javierbrolo
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 224543
+bundleId: 1023355
+url: https://javierbrolo.shinyapps.io/barplotsurvey/
+when: 1507817368.74712
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: BarplotSurvey.R|PrepareData.R|SurveyData.RData
