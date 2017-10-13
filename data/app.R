@@ -7,8 +7,8 @@ library(survey)
 library(shiny)
 
 # Get data and function
-source("https://raw.githubusercontent.com/javob/BarplotSurvey/master/data/PrepareData.R", encoding = "UTF-8")
-source("https://raw.githubusercontent.com/javob/BarplotSurvey/master/data/BarplotSurvey.R", encoding = "UTF-8")
+source("https://github.com/alburezg/BarplotSurvey/raw/master/data/PrepareData.R", encoding = "UTF-8")
+source("https://github.com/alburezg/BarplotSurvey/raw/master/data/BarplotSurvey.R", encoding = "UTF-8")
 
 
 ui <- fluidPage(

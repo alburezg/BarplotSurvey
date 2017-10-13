@@ -1,7 +1,7 @@
 # Prepare
 
 # Load data
-load(url("https://github.com/javob/BarplotSurvey/raw/master/data/SurveyData.RData"))
+load(url("https://github.com/alburezg/BarplotSurvey/blob/master/data/SurveyData.RData?raw=true"))
 
 # Define question titles 
 dataVars       = names(lapop[,8:22])
