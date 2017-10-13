@@ -1,0 +1,12 @@
+name: barplotsurvey
+title: barplotsurvey
+username:
+account: diego-alburez
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 224780
+bundleId: 1024635
+url: https://diego-alburez.shinyapps.io/barplotsurvey/
+when: 1507876748.80922
+asMultiple: FALSE
+asStatic: FALSE

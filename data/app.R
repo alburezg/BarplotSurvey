@@ -10,30 +10,43 @@ library(shiny)
 source("https://github.com/alburezg/BarplotSurvey/raw/master/data/PrepareData.R", encoding = "UTF-8")
 source("https://github.com/alburezg/BarplotSurvey/raw/master/data/BarplotSurvey.R", encoding = "UTF-8")
 
+# UI ----
 
 ui <- fluidPage(
   headerPanel('Posiciones ideológicas'),
   sidebarPanel(
+    div(style="display:inline-block",
     selectInput("variable", "Seleccione una pregunta:",
-                dataQuestions3),
+                dataQuestions3)
+    ),
+    div(style="display:inline-block",
     checkboxGroupInput("q1", "Género:",
                        c("Hombre" = 1,"Mujer" = 2),
-                       c(1:2)),
+                       c(1:2))
+    ),
+    div(style="display:inline-block",
     checkboxGroupInput("ur", "Población:",
                        c("Urbano" = 1,"Rural" = 2),
-                       c(1:2)),
-    checkboxGroupInput("etid", "Etnicidad:",
+                       c(1:2))
+    ),
+    div(style="display:inline-block",
+        checkboxGroupInput("etid", "Etnicidad:",
                        c("Mestiza" = 1,"Indígena" = 2,"Otra" = 3),
-                       c(1:3)),
-    checkboxGroupInput("q2", "Edad:",
+                       c(1:3))
+        ),
+    div(style="display:inline-block",
+        checkboxGroupInput("q2", "Edad:",
                        c("De 18 a 25" = 1,"De 26 a 35" = 2,
                          "De 36 a 47" = 3,"De 48 a 91" = 4),
                        c(1:4))
+    )
   ),
   mainPanel(
     plotOutput('plot1')
   )
 )
+
+# Server ----
 
 server <- function(input, output) {
 
